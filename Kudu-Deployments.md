@@ -1,0 +1,1 @@
+Kudu can build apps for NodsJS, Python, Dotnetcore, PHP and Ruby. It uses a build system called Oryx
