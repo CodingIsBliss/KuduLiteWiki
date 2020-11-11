@@ -50,7 +50,7 @@ We are hopeful that this set of changes will ensure a better experience for our 
 
 # How can I file an issue?
 Open an issue in [ImageBuilder Issues](https://github.com/azure-app-service/imagebuilder/issues) for any issues encountered on this regard.
-
-Thanks,
-App Service Linux team,
+<br /><br />
+Thanks,<br />
+App Service Linux team,<br />
 Microsoft.
