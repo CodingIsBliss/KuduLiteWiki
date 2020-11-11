@@ -24,8 +24,7 @@ One such example is for the customers who have hardcoded the path to their virtu
 Customers whose apps are writing to a local path relative to the app path would no longer have their data persisted. Only the data written under the `/home` directory is persisted.
 
 # Impacted Versions:
-Python 2.7, 3.5, 3.6, 3.7, 3.8
-
+Python 2.7, 3.6, 3.7, 3.8
 
 # How can this be tested?
 The <> region is upgraded with the above change. This is a good candidate region to deploy and test the app. 
@@ -33,12 +32,12 @@ The <> region is upgraded with the above change. This is a good candidate regio
 Alternatively, you can download our latest images and test your app’s runtime locally. 
 
 * Steps to test locally:
-** Pull the Build Image: `docker pull mcr.microsoft.com/appsvc/kudulite:20201109.1`
-** Create a local folder which would be used by both the build and the runtime container.
-** Start the build image locally: `docker run -p -v <local-directory>:/home <local-port>:8181 mcr.microsoft.com/appsvc/kudulite:20201109.1`
-** Clone the App Locally: `git clone http://`
-** Push the app code to build container:
-** Start the runtime container:
+1. Pull the Build Image: `docker pull mcr.microsoft.com/appsvc/kudulite:20201109.1`
+1. Create a local folder which would be used by both the build and the runtime container.
+1. Start the build image locally: `docker run -p -v <local-directory>:/home <local-port>:8181 mcr.microsoft.com/appsvc/kudulite:20201109.1`
+1. Clone the App Locally: `git clone http://`
+1. Push the app code to build container:
+1. Start the runtime container:
 
 The latest image tags are:
 * Build Container: `mcr.microsoft.com/appsvc/kudulite:20201109.1`
