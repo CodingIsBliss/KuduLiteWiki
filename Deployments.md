@@ -1,1 +1,0 @@
-KuduLite uses Oryx Build System to build App Code
