@@ -32,8 +32,7 @@ The <> region is upgraded with the above change. This is a good candidate regio
 
 Alternatively, you can download our latest images and test your app’s runtime locally. 
 
-*
-*Steps to test locally:
+* Steps to test locally:
 ** Pull the Build Image: `docker pull mcr.microsoft.com/appsvc/kudulite:20201109.1`
 ** Create a local folder which would be used by both the build and the runtime container.
 ** Start the build image locally: `docker run -p -v <local-directory>:/home <local-port>:8181 mcr.microsoft.com/appsvc/kudulite:20201109.1`
