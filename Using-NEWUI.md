@@ -16,6 +16,8 @@ Users can switch back to the legacy UI by clicking the button on top (this setti
 
 ![Switching back to Legacy UI](./images/legacyui-newui.png)
 
+Users can switch back to new UI by browsing to `/newui`
+
 
 Kudu Bash:
 Kudu Bash is now uses the same code path as WebSSH to the webapp. This provides a much smoother experience and fixes problems like auto-complete not working on the Bash console. The default shell for Kudu Bash is `sh`, list of available shells can be listed by `cat /etc/shells`
