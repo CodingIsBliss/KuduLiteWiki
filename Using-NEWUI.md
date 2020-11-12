@@ -10,16 +10,17 @@ The JSON View provides the functionality to expand the complete json, copy it an
 
 The users can also access the logs for the latest deployment by clicking button on the top right corner of the Kudu home page.
 
-Switching back to the legacy UI:
+**Switching back to the legacy UI:**
 
 Users can switch back to the legacy UI by clicking the button on top (this setting is not sticky across the sessions).
 
 ![Switching back to Legacy UI](./images/legacyui-newui.png)
 
+**Switching to New UI**
 Users can switch back to new UI by browsing to `/newui`
 
 
-Kudu Bash:
+**Kudu Bash:**
 Kudu Bash is now uses the same code path as WebSSH to the webapp. This provides a much smoother experience and fixes problems like auto-complete not working on the Bash console. The default shell for Kudu Bash is `sh`, list of available shells can be listed by `cat /etc/shells`
 
 ![New Kudu Bash](./images/bash-newui.png)
