@@ -27,7 +27,7 @@ Customers whose apps are writing to a local path relative to the app path would 
 Python 2.7, 3.6, 3.7, 3.8
 
 # How can this be tested?
-The <> region is upgraded with the above change. This is a good candidate region to deploy and test the app. 
+The Canary regions (Central US EUAP), West Central US, East US, West Europe regions are already upgraded with the above change. This is a good candidate region to deploy and test the app. 
 
 Alternatively, you can download our latest images and test your app’s runtime locally. 
 
