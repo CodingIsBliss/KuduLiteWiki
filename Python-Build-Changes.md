@@ -38,7 +38,7 @@ Alternatively, you can download our latest images and test your app’s runtime 
 1. Clone the App Locally: `git clone http://localhost:<local-build-port>/localsite.git`
 1. Push the app code to the build container: `git push`
 1. Start the runtime container: `docker run -p <local-runtime-port>:8080 -v <local-directory>:/home mcr.microsoft.com/appsvc/python:<ver>_20201109.1`
-1. Browse your app: http://localhost:<local-build-port>/
+1. Browse your app: `http://localhost:<local-build-port>/`
 
 The latest image tags are:
 * Build Container: `mcr.microsoft.com/appsvc/kudulite:20201109.1`
