@@ -19,6 +19,11 @@ Zend Engine v3.3.21, Copyright (c) 1998-2018 Zend Technologies
 
 
 ***
-Please note: For custom deployment scripts, certain new SDKs (Node:14-LTS, PHP:7.4, Dotnet:5.0, Python:3.9) may not be in the bash context, the above commands can be used to get these SDKs into the context
+**Please note**: For custom deployment scripts, certain new SDKs listed below may not be present in the bash context by default, the above commands can be used to get these SDKs into the context:
+* Node:14-LTS
+* PHP:7.4
+* Dotnet:5.0
+* Python:3.9
+***
 
 Please create a new issue if you find any bugs. Happy Debugging!
