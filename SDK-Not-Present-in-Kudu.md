@@ -1,4 +1,4 @@
-We have been working with the [Microsoft Oryx](https://github.com/microsoft/oryx) to provide the ability for App Service users to use any SDK that want their deployment scripts to run/Kudu Bash to have in it's context.
+We have been working with [Microsoft Oryx](https://github.com/microsoft/oryx) to provide the ability for App Service users to use any SDK they want their deployment scripts to run/Kudu Bash to have in it's context.
 
 **Changing the context in the bash/custom build scripts**
 
