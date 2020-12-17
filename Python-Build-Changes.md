@@ -19,9 +19,12 @@ As a part of this change, the app would no longer run from `/home/site/wwwroot` 
 # Potential impact
 We do not expect apps execution to break due to this change. However, for those customers who use a bash/shell script as the startupScript, there could be potential compatibility issues when the new builds are carried out after the next platform update.
 
-One such example is for the customers who have hardcoded the path to their virtual environment as "/antenv/bin/activate" in their startup scripts may get an error. We recommend that these customers rebuild the app, review their startup script and modify all these paths relative to `$APP_PATH`.
 
-Customers whose apps are writing to a local path relative to the app path would no longer have their data persisted. Only the data written under the `/home` directory is persisted.
+Few scenarios which could break
+- Apps which have hardcoded the path to their virtual environment as "/antenv/bin/activate" in their startup scripts may get an error. We recommend that these customers rebuild the app, review their startup script and modify all these paths relative to `$APP_PATH`.
+
+- Apps which are writing to a local path relative to the app path would no longer have their data persisted. Only the data written under the `/home` directory is persisted. This can include libraries which persist session state.
+
 
 # Impacted Versions:
 Python 2.7, 3.6, 3.7, 3.8
