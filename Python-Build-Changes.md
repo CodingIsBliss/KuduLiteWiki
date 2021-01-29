@@ -1,6 +1,6 @@
 # Change
 
-Python build and runtime workflow is changing for the apps built on App Service. 
+Starting **03/01/2021** Python build and runtime workflow is changing for the apps built on App Service. This may be a **Breaking Change** for your app.
 
 # Current build process
 
@@ -30,25 +30,29 @@ Few scenarios which could break
 Python 2.7, 3.6, 3.7, 3.8
 
 # How can this be tested?
-The Canary regions (Central US EUAP), West Central US, East US, West Europe regions are already upgraded with the above change. This is a good candidate region to deploy and test the app. 
 
+## Testing on Azure:
+1. Presently, the new behavior is opt-in. To try the new version, you can add the app setting: `KUDU_BUILD_VERSION=1.0.0`. 
+1. If you want to continue to pin to the old version - This can be done by adding an app setting: `KUDU_BUILD_VERSION=0.0.1`. This app setting would ensure the build behavior remains the same even when we change default behavior on 03/01/2021.
+
+## Testing Locally:
 Alternatively, you can download our latest images and test your app’s runtime locally. 
 
 * Steps to test locally:
-1. Pull the Build Image: `docker pull mcr.microsoft.com/appsvc/kudulite:20201109.1`
+1. Pull the Build Image: `docker pull mcr.microsoft.com/appsvc/kudulite:20201229.1`
 1. Create a local folder which would be used by both the build and the runtime container.
-1. Start the build image locally: `docker run -p -v <local-directory>:/home <local-build-port>:8181 mcr.microsoft.com/appsvc/kudulite:20201109.1`
+1. Start the build image locally: `docker run -v <local-directory>:/home -e KUDU_BUILD_VERSION=1.0.0 -p <local-build-port>:8181 mcr.microsoft.com/appsvc/kudulite:20201109.1`
 1. Clone the App Locally: `git clone http://localhost:<local-build-port>/localsite.git`
 1. Push the app code to the build container: `git push`
-1. Start the runtime container: `docker run -p <local-runtime-port>:8080 -v <local-directory>:/home mcr.microsoft.com/appsvc/python:<ver>_20201109.1`
-1. Browse your app: `http://localhost:<local-build-port>/`
+1. Start the runtime container: `docker run -p <local-runtime-port>:8080 -v <local-directory>:/home mcr.microsoft.com/appsvc/python:<ver>_20201229.1`
+1. Browse your app: `http://localhost:<local-runtime-port>/`
 
 The latest image tags are:
-* Build Container: `mcr.microsoft.com/appsvc/kudulite:20201109.1`
-* Python 2.7: `mcr.microsoft.com/appsvc/python:2.7_20201109.1`
-* Python 3.6: `mcr.microsoft.com/appsvc/python:3.6_20201109.1`
-* Python 3.7: `mcr.microsoft.com/appsvc/python:3.7_20201109.1`
-* Python 3.8: `mcr.microsoft.com/appsvc/python:3.8_20201109.1`
+* Build Container: `mcr.microsoft.com/appsvc/kudulite:20201229.1`
+* Python 2.7: `mcr.microsoft.com/appsvc/python:2.7_20201229.1`
+* Python 3.6: `mcr.microsoft.com/appsvc/python:3.6_20201229.1`
+* Python 3.7: `mcr.microsoft.com/appsvc/python:3.7_20201229.1`
+* Python 3.8: `mcr.microsoft.com/appsvc/python:3.8_20201229.1`
 
 We are hopeful that this set of changes will ensure a better experience for our customers on App Service Linux.
 
