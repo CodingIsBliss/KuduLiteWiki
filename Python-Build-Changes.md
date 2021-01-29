@@ -1,6 +1,6 @@
 # Change
 
-Starting **03/01/2021** Python build and runtime workflow is changing for the apps built on App Service. This may be a **Breaking Change** for your app.
+Starting **03/01/2021** (March 1st 2021) Python build and runtime workflow is changing for the apps built on App Service. This may be a **Breaking Change** for your app.
 
 # Current build process
 
