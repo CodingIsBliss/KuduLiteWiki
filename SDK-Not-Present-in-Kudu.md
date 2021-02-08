@@ -5,8 +5,8 @@ We have been working with [Microsoft Oryx](https://github.com/microsoft/oryx) to
 The SDKs can be loaded into the context by executing:
 
 ```
-oryx prep --skip-detection --platforms-and-versions "php=7.4.9"
-source benv php=7.4.9
+oryx prep --skip-detection --platforms-and-versions "php=7.3.21"
+source benv php=7.3.21
 ```
 
 Now the above PHP binaries are accessible to the bash:
