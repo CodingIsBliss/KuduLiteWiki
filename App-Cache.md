@@ -10,7 +10,9 @@ With this feature, each app instance(or VM in the App Service plan) gets it's ow
 
 ## How do I enable App Cache?
 
-You need to set the app setting `WEBSITES_ENABLE_APP_CACHE=true` and you are good to go!
+* You need to set the app setting `WEBSITES_ENABLE_APP_CACHE=true`.
+* After setting this app setting, you will need to do a new deployment in order for the build artifacts to be available to AppCache.
+* Browse to your app.
 
 ## Workflow
 
