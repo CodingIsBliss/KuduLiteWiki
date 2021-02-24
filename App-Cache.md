@@ -1,6 +1,12 @@
 ## What is App Cache?
 
-App Service provides a quick way to deploy code apps and get started. During this deployment process, the code is copied to a CIFS(Network File System base) volume and the app runtime process picks this new copy of the code. This works great for many apps but we have observed issues recently for some framework runtimes that lock files and leave stale file handles on the CIFS(NFS based) volume. This causes the deployment build process unable to override that file rendering the deployments to fail. During the regular platform upgrades we also make the app CIFS volume read only which may affect availability for some apps that need access to a R/W volume. To solve this, we have built a new feature called _App Cache_. With this feature, each app instance(or VM in the App Service plan) gets it's own local ephemeral copy of the App Code instead of using the shared NFS mount which is used by default on App Service on Linux. This means if an app is running on multiple instances, each container of that app will use it's own local host(/VM) volume to host the app code instead of using the shared storage between instances. This would completely remove the dependency on the NFS volume for the app and shield it from issues in the NFS.
+App Service provides a quick way to deploy code apps and run them in a fully managed cloud environment.
+
+Behind the scenes, during the code deployment step, the code is copied to a CIFS(Network File System base) volume, which is then consumed when the app runtime starts up. Under default configuration, the exact same network share is mounted to the runtime. This design has the advantage that the application runtime in App Service has a persistent R/W storage share offered by default, which is a core requirements of frameworks like WordPress.
+
+However, most applications do not require a persistent storage, and some application may favor faster performance of code on a local storage as opposed to remote storage. To optimize for this kind of applications, we have built a new feature called _App Cache_. 
+
+With this feature, each app instance(or VM in the App Service plan) gets it's own locl ephemeral copy of the App Code instead of using the shared NFS mount which is used by default on App Service on Linux. This means if an app is running on multiple instances, each container of that app will use it's own local host(/VM) volume to host the app code instead of using the shared storage between instances. 
 
 ## How do I enable App Cache?
 
