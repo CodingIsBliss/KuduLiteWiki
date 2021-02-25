@@ -2,11 +2,11 @@
 
 App Service provides a quick way to deploy code apps and run them in a fully managed cloud environment.
 
-Behind the scenes, during the code deployment step, the code is copied to a CIFS(Network File System base) volume, which is then consumed when the app runtime starts up. Under default configuration, the exact same network share is mounted to the runtime. This design has the advantage that the application runtime in App Service has a persistent R/W storage share offered by default, which is a core requirements of frameworks like WordPress.
+Behind the scenes, during the code deployment step, the code is copied to a CIFS (Network File System base) volume, which is then consumed when the app runtime starts up. Under default configuration, the exact same network share is mounted to the runtime. This design has the advantage that the application runtime in App Service has a persistent R/W storage share offered by default, which is a core requirements of frameworks like WordPress.
 
-However, most applications do not require a persistent storage, and some application may favor faster performance of code on a local storage as opposed to remote storage. To optimize for this kind of applications, we have built a new feature called _App Cache_. 
+However, most applications do not require a persistent storage, and some application may favor faster performance of code on a local storage as opposed to remote storage. To optimize for this kind of applications, we have built a new feature called **App Cache**. 
 
-With this feature, each app instance(or VM in the App Service plan) gets it's own locl ephemeral copy of the App Code instead of using the shared NFS mount which is used by default on App Service on Linux. This means if an app is running on multiple instances, each container of that app will use it's own local host(/VM) volume to host the app code instead of using the shared storage between instances. 
+With this feature, each app instance (or VM in the App Service plan) gets it's own local ephemeral copy of the App Code instead of using the shared NFS mount which is used by default on App Service on Linux. This means if an app is running on multiple instances, each container of that app will use it's own local host(/VM) volume to host the app code instead of using the shared storage between instances. 
 
 ## How do I enable App Cache?
 
