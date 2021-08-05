@@ -25,6 +25,7 @@ When the app setting is set, the container goes through a recycle to pick up the
  - Incase the NFS volume goes down, the main app will remain in a functioning state. As the SCM site depends on the NFS volume, deployments will not be possible during this time.
  - There will be no shared volumes between multiple instances of an app.
  - Currently the docker volume created is read only. So the app cannot write any file etc. onto the volume.
+ - AppCache and Run from Package are completely different ways of presenting the app content. Currently these settings are incompatible with each other.
 
 # How can I file an issue?
 You could either open a support incident on Azure or Open an issue in [ImageBuilder Issues](https://github.com/azure-app-service/imagebuilder/issues) for any issues encountered on this regard.
