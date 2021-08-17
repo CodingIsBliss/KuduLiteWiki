@@ -40,3 +40,16 @@ The end point returns in the following format -
   }
 }
 ```
+The log file rolls over when the size of it reaches a certain size. If that happens, the `nextToken` field is ignored and the reading starts from the start. The output would be in the following format -
+```
+{
+  {"nextToken": {nextToken}},
+  {"entries": [
+    {Log file has rolled over.}
+    { "--logEntry1--" },
+    { "--logEntry2--" },
+    ..
+    { "--logEntryMax--"}]
+  }
+}
+```
