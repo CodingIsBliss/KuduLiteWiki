@@ -6,7 +6,7 @@ The simplest way to get the logs would be to use curl.
 ```
 curl -u {username} https://{sitename}.scm.azurewebsites.net/api/logstreamV2
 ```
-Here `username` is your Azure Publishing user (same as you use for git publishing). The command will prompt for your password.
+Here `{username}` is your Azure Publishing user (same as you use for git publishing). The command will prompt for your password.
 
 Please refer notes from [Diagnostic Log Stream](https://github.com/projectkudu/kudu/wiki/Diagnostic-Log-Stream) for how to use curl and other details.
 
