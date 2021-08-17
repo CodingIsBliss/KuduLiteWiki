@@ -1,5 +1,5 @@
 # Overview
-The endpoint /logstreamV2 enables you to get the logs emitted by your application using a non-persistent connection. It is similar to [Diagnostic Log Stream](https://github.com/projectkudu/kudu/wiki/Diagnostic-Log-Stream), but also different in some ways.
+The endpoint /logstreamV2 enables you to get the logs emitted by your application using a non-persistent connection. It is an alternative to [Diagnostic Log Stream](https://github.com/projectkudu/kudu/wiki/Diagnostic-Log-Stream) for getting the application logs.
 
 # Usage
 The simplest way to get the logs would be to use curl. 
