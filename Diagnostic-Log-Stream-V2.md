@@ -26,8 +26,7 @@ curl -u {username} https://{sitename}.scm.azurewebsites.net/api/logstreamV2?max=
 ```
 where the `{nextToken}` is the value in the nextToken field returned by the first call. You can similarly call the end point again using value in the nextToken field to get the next 'max' number of log entries.
 
-# Returns
-
+# Return Value
 The end point returns in the following format - 
 ```
 {
