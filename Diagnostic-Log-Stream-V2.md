@@ -6,9 +6,9 @@ The simplest way to get the logs would be to use curl.
 ```
 curl -u {username} https://{sitename}.scm.azurewebsites.net/api/logstreamV2
 ```
-Here `{username}` is your Azure Publishing user (same as you use for git publishing). The command will prompt for your password.
+Here `{username}` is your Azure Publishing username (same as the username you use for git publishing). The command will prompt for your password.
 
-Please refer notes from [Diagnostic Log Stream](https://github.com/projectkudu/kudu/wiki/Diagnostic-Log-Stream) for how to use curl and other details.
+Please refer notes from [Diagnostic Log Stream](https://github.com/projectkudu/kudu/wiki/Diagnostic-Log-Stream) on how to use curl and other details.
 
 # Optional Parameters
 There are a few parameters which you can use to control what is returned by the API endpoint.
@@ -24,10 +24,10 @@ To get the next 100 entries use -
 ```
 curl -u {username} https://{sitename}.scm.azurewebsites.net/api/logstreamV2?max=100&nextToken={nextToken}
 ```
-where the `{nextToken}` is the value in the nextToken field returned by the first call. You can similarly call the end point again using value in the nextToken field to get the next 'max' number of log entries.
+where the `{nextToken}` is the value in the nextToken field returned by the first call. You can similarly call the end point again using value in the nextToken field returned by the current call to get the next 'max' number of log entries.
 
 # Return Value
-The end point returns in the following format - 
+The end point returns data in the following format - 
 ```
 {
   {"nextToken": {nextToken}},
@@ -39,7 +39,7 @@ The end point returns in the following format -
   }
 }
 ```
-The log file rolls over when the size of it reaches a certain size. If that happens, the `nextToken` field is ignored and the reading starts from the start. The output would be in the following format -
+The log file rolls over when the size of it reaches a certain threshold. If that happens, the `nextToken` field is ignored and the reading starts from the beginning. The output would be in the following format -
 ```
 {
   {"nextToken": {nextToken}},
